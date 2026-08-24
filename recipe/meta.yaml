@@ -1,5 +1,5 @@
 {% set name = "plotext" %}
-{% set version = "5.3.2" %}
+{% set version = "6.0.0" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/plotext-{{ version }}.tar.gz
-  sha256: 52d1e932e67c177bf357a3f0fe6ce14d1a96f7f7d5679d7b455b929df517068e
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/plotext-{{ version }}.tar.gz
+  sha256: d49792c1881a15dfe27a23b1d659660d3962f9e1afaac21250eccc3bbd47581f
 
 build:
   number: 0
