@@ -19,7 +19,7 @@ build:
     - ln -sf "${CXX_PATH}" "${BUILD_PREFIX}/bin/g++"
     - {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - plotext = plotext.plotext_cli:main
+    - plotext = plotext._cli:main
 
 requirements:
   build:
