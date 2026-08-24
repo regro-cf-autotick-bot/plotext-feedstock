@@ -14,9 +14,9 @@ build:
   number: 0
   script:
     # resolve CXX path with command -v
-    - CXX_PATH="$(command -v "${CXX}")"
+    - CXX_PATH="$(command -v "${CXX}")"  # [not win]
     # symlink it to g++ in the build bin dir
-    - ln -sf "${CXX_PATH}" "${BUILD_PREFIX}/bin/g++"
+    - ln -sf "${CXX_PATH}" "${BUILD_PREFIX}/bin/g++"  # [not win]
     - {{ PYTHON }} -m pip install . -vv
   entry_points:
     - plotext = plotext._cli:main
