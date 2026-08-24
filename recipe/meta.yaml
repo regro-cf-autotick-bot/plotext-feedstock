@@ -12,7 +12,12 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    # resolve CXX path with command -v
+    - CXX_PATH="$(command -v "${CXX}")"
+    # symlink it to g++ in the build bin dir
+    - ln -sf "${CXX_PATH}" "${BUILD_PREFIX}/bin/g++"
+    - {{ PYTHON }} -m pip install . -vv
   entry_points:
     - plotext = plotext.plotext_cli:main
 
