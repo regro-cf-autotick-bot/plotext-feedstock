@@ -13,7 +13,7 @@ m2w64_c_stdlib_version:
 m2w64_cxx_compiler:
 - gxx
 m2w64_cxx_compiler_version:
-- '15'
+- '14'
 pin_run_as_build:
   python:
     min_pin: x.x
