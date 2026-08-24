@@ -12,25 +12,29 @@ source:
 
 build:
   number: 0
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - plotext = plotext.plotext_cli:main
 
 requirements:
+  build:
+    - {{ stdlib("c") }}
+    - {{ compiler("c") }}
+    - {{ compiler("cxx") }}
   host:
     - pip
-    - python {{ python_min }}
-    - setuptools
+    - python
+    - setuptools >=64
+    - wheel
   run:
-    - python >={{ python_min }}
+    - python
 
 test:
   imports:
     - plotext
   requires:
     - pip
-    - python {{ python_min }}
+    - python
   commands:
     - pip check
     - plotext --help
